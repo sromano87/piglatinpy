@@ -59,3 +59,10 @@ class TestPigLatinTranslator(TestCase):
         translation = translator.translate()
         # Assert
         self.assertEqual("ellohay", translation)
+
+    def test_translate_word_starting_invalid_char(self):
+        # Arrange
+        translator = PigLatinTranslator("1hello")
+        # Act and Assert
+        self.assertRaises(PigLatinError, translator.translate)
+
