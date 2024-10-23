@@ -30,8 +30,10 @@ class PigLatinTranslator:
         first_char = self._phrase[0]
         if first_char in VOWELS:
             return self._translate_word_starting_vowel()
-        else:
+        elif first_char in CONSONANTS:
             return self._translate_word_starting_consonant()
+        else:
+            raise PigLatinError
 
     def _translate_word_starting_vowel(self) -> str:
         last_char = self._phrase[-1]
