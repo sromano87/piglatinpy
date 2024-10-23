@@ -12,3 +12,11 @@ class TestPigLatinTranslator(TestCase):
         phrase = translator.get_phrase()
         # Assert
         self.assertEqual("hello world", phrase)
+
+    def test_translate_empy_phrase(self):
+        # Arrange
+        translator = PigLatinTranslator("")
+        # Act
+        translation = translator.translate()
+        # Assert
+        self.assertEqual("nil", translation)
