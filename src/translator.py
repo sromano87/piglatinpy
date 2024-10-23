@@ -47,5 +47,10 @@ class PigLatinTranslator:
             raise PigLatinError
 
     def _translate_word_starting_consonant(self) -> str:
-        first_char = self._phrase[0]
-        return self._phrase[1:] + first_char + "ay"
+        suffix = ""
+        for char in self._phrase:
+            if char in CONSONANTS:
+                suffix += char
+            else:
+                break
+        return self._phrase[len(suffix):] + suffix + "ay"
