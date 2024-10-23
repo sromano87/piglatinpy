@@ -28,3 +28,11 @@ class TestPigLatinTranslator(TestCase):
         translation = translator.translate()
         # Assert
         self.assertEqual("anynay", translation)
+
+    def test_translate_word_starting_vowel_ending_vowel(self):
+        # Arrange
+        translator = PigLatinTranslator("epoque")
+        # Act
+        translation = translator.translate()
+        # Assert
+        self.assertEqual("epoqueyay", translation)
