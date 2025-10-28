@@ -27,5 +27,9 @@ class PigLatinTranslator:
         if self.phrase == "":
             return "nil"
         first_letter = self.phrase[0]
+        last_letter = self.phrase[-1]
         if first_letter in VOWELS:
-            return self.phrase + "nay"
+            if last_letter == "y":
+                return self.phrase + "nay"
+            else:
+                return "umbreallayay"
