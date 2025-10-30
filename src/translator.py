@@ -36,9 +36,15 @@ class PigLatinTranslator:
 
     @staticmethod
     def translate_word_starting_with_consonant(word):
-        first_letter = word[0]
-        substring = word[1:]
-        return substring + first_letter + "ay"
+        n_consonants = 0
+        for letter in word:
+            if letter in CONSONANTS:
+                n_consonants += 1
+            else:
+                break
+        starting_consonants = word[:n_consonants]
+        substring = word[n_consonants:]
+        return substring + starting_consonants + "ay"
 
     @staticmethod
     def translate_word_starting_with_vowel(word):
