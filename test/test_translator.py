@@ -64,3 +64,8 @@ class TestPigLatinTranslator(TestCase):
         translator = PigLatinTranslator("spring")
         translation = translator.translate()
         self.assertEqual("ingspray", translation)
+
+    def test_translate_phrase_with_only_consonants(self):
+        translator = PigLatinTranslator("fly")
+        translation = translator.translate()
+        self.assertEqual("flyay", translation)
