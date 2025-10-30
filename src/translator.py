@@ -48,6 +48,8 @@ class PigLatinTranslator:
 
     @staticmethod
     def translate_word(word: str) -> str:
+        if word == "":
+            return ""
         first_letter = word[0]
         if first_letter in VOWELS:
             return PigLatinTranslator.translate_word_starting_with_vowel(word)
