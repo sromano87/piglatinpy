@@ -33,7 +33,7 @@ class PigLatinTranslator:
         word = ""
         translation = ""
         for i,char in enumerate(self.phrase):
-            if char == " " or char == "-":
+            if char == " " or char == "-" or char == "!":
                 translation += PigLatinTranslator.translate_word(word) + char
                 word = ""
             elif i == len(self.phrase) - 1:
