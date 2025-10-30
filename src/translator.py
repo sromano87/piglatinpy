@@ -29,12 +29,16 @@ class PigLatinTranslator:
         if self.phrase == "":
             return "nil"
         first_letter = self.phrase[0]
-        last_letter = self.phrase[-1]
         if first_letter in VOWELS:
             return PigLatinTranslator.translate_word_starting_with_vowel(self.phrase)
         elif first_letter in CONSONANTS:
-            substring = self.phrase[1:]
-            return substring + first_letter + "ay"
+            return PigLatinTranslator.translate_word_starting_with_consonant(self.phrase)
+
+    @staticmethod
+    def translate_word_starting_with_consonant(word):
+        first_letter = word[0]
+        substring = word[1:]
+        return substring + first_letter + "ay"
 
     @staticmethod
     def translate_word_starting_with_vowel(word):
