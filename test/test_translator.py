@@ -55,7 +55,7 @@ class TestPigLatinTranslator(TestCase):
         translation = translator.translate()
         self.assertEqual("omecay", translation)
 
-    def test_translate_phrase_starting_with_more_consonants(self):
+    def test_translate_phrase_starting_with_two_consonants(self):
         translator = PigLatinTranslator("known")
         translation = translator.translate()
         self.assertEqual("ownknay", translation)
