@@ -6,6 +6,8 @@ VOWELS = "aeiou"
 
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 
+PUNCUATIONS = ".,;:?!()"
+
 class PigLatinTranslator:
 
     def __init__(self, phrase: str):
@@ -33,7 +35,7 @@ class PigLatinTranslator:
         word = ""
         translation = ""
         for i,char in enumerate(self.phrase):
-            if char == " " or char == "-" or char == "!":
+            if char == " " or char == "-" or char in PUNCUATIONS:
                 translation += PigLatinTranslator.translate_word(word) + char
                 word = ""
             elif i == len(self.phrase) - 1:
